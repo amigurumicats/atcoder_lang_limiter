@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "atcoder lang limiter",
+  "description" : "AtCoderで選択できる言語を制限します",
+  "version": "0.1",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icon_16.png"
+  },
+  "browser_action": {
+    "default_popup": "config.html",
+     "default_icon": {
+       "16": "icon_16.png"
+     }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://atcoder.jp/contests/*/custom_test", "https://atcoder.jp/contests/*/tasks/*"],
+      "js": ["script.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
